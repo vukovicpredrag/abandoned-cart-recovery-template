@@ -1,0 +1,44 @@
+{
+    "name": "vukovicpredrag/abandoned-cart-recovery-template",
+    "description": "Abandoned cart recovery: reminder, open/click tracking, purchase-intent scoring and a discount fallback",
+    "type": "mautic-resource",
+    "license": "GPL-3.0-or-later",
+    "keywords": [
+        "abandoned-cart",
+        "e-commerce",
+        "recovery",
+        "discount",
+        "email"
+    ],
+    "authors": [
+        {
+            "name": "Predrag Vukovic"
+        }
+    ],
+    "require": {
+        "mautic/core-lib": "^5.0 || ^6.0 || ^7.0"
+    },
+    "extra": {
+        "display_name": "Abandoned Cart Recovery",
+        "detailed_description": "Recover lost revenue automatically. When a shopper adds items to their cart but doesn't check out, this campaign brings them back with a friendly reminder, learns from how they engage, and rewards the shoppers most likely to convert — while giving the hesitant ones a reason to finish their order.\n\n## What's included\n\n- 2 ready-to-send emails: a cart reminder and a 10% discount follow-up (code `COMEBACK10`), both mobile-responsive and Outlook-safe.\n- The **Cart Abandoners** segment (contacts active in the last 7 days who haven't completed checkout).\n- A branching campaign with open- and click-tracking, point scoring and a `hot-cart` tag for your most engaged shoppers.\n\n## How the campaign flows\n\n1. A shopper enters the **Cart Abandoners** segment and receives the cart reminder email immediately.\n2. The campaign watches whether they open the reminder.\n3. Openers who click a product link earn **15 purchase-intent points** and are tagged **hot-cart**, so sales/marketing can prioritise them.\n4. Shoppers who don't open get a second email after one day with a **10% discount** to tip them over the line.\n\n## Customize before you publish\n\n- Swap in your store name, logo, product links and the discount code/amount.\n- Tune the **Cart Abandoners** segment filter to match how you flag abandonment (e.g. a cart-value field, a tag, or a 'visited cart' page hit).\n- Adjust the point value and tag name to fit your scoring model.\n- Change the one-day discount delay to match your store's urgency.\n\n## Best for\n\nOnline stores and DTC brands that want to recover abandoned carts and automatically surface high-intent shoppers for follow-up.\n\nImported emails, segments, forms and assets arrive unpublished so you can review and brand everything safely before going live. Contact email addresses are stripped on import (GDPR-safe) and the campaign is deduplicated by UUID.",
+        "expected_outcomes": "Recover more checkouts and focus attention on the shoppers most likely to buy.\n\n- Bring cart abandoners back with a timed, two-touch recovery sequence.\n- Automatically score and tag shoppers who show real purchase intent.\n- Convert hesitant shoppers with a targeted discount instead of a generic blast.",
+        "industry": [
+            "E-commerce",
+            "Retail"
+        ],
+        "mautic": {
+            "headline": "Win back abandoned carts and reward high-intent shoppers",
+            "works-with": [
+                "^5.0",
+                "^6.0",
+                "^7.0"
+            ],
+            "languages": [
+                "en"
+            ],
+            "price": {
+                "amount": 0
+            }
+        }
+    }
+}

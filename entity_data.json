@@ -1,0 +1,616 @@
+[
+    {
+        "campaign": [
+            {
+                "id": 1,
+                "name": "Abandoned Cart Recovery",
+                "description": "<p>Wins back shoppers who left items in their cart: sends a reminder, watches for opens and product-link clicks, rewards engaged shoppers with points and a hot-cart tag, and nudges the rest with a discount.</p>",
+                "is_published": false,
+                "canvas_settings": {
+                    "nodes": [
+                        {
+                            "id": 1,
+                            "positionX": "300",
+                            "positionY": "180"
+                        },
+                        {
+                            "id": 2,
+                            "positionX": "300",
+                            "positionY": "320"
+                        },
+                        {
+                            "id": 3,
+                            "positionX": "150",
+                            "positionY": "460"
+                        },
+                        {
+                            "id": 4,
+                            "positionX": "150",
+                            "positionY": "600"
+                        },
+                        {
+                            "id": 5,
+                            "positionX": "150",
+                            "positionY": "740"
+                        },
+                        {
+                            "id": 6,
+                            "positionX": "470",
+                            "positionY": "460"
+                        },
+                        {
+                            "id": "lists",
+                            "positionX": "300",
+                            "positionY": "39"
+                        }
+                    ],
+                    "connections": [
+                        {
+                            "sourceId": "lists",
+                            "targetId": 1,
+                            "anchors": {
+                                "source": "leadsource",
+                                "target": "top"
+                            }
+                        },
+                        {
+                            "sourceId": 1,
+                            "targetId": 2,
+                            "anchors": {
+                                "source": "bottom",
+                                "target": "top"
+                            }
+                        },
+                        {
+                            "sourceId": 2,
+                            "targetId": 3,
+                            "anchors": {
+                                "source": "yes",
+                                "target": "top"
+                            }
+                        },
+                        {
+                            "sourceId": 2,
+                            "targetId": 6,
+                            "anchors": {
+                                "source": "no",
+                                "target": "top"
+                            }
+                        },
+                        {
+                            "sourceId": 3,
+                            "targetId": 4,
+                            "anchors": {
+                                "source": "yes",
+                                "target": "top"
+                            }
+                        },
+                        {
+                            "sourceId": 4,
+                            "targetId": 5,
+                            "anchors": {
+                                "source": "bottom",
+                                "target": "top"
+                            }
+                        }
+                    ]
+                },
+                "uuid": "b1f0a3c2-1d44-4f0a-9c21-7e6f0a2b9c10"
+            }
+        ],
+        "campaign_event": [
+            {
+                "id": 1,
+                "campaign_id": 1,
+                "name": "Send cart reminder",
+                "description": "",
+                "type": "email.send",
+                "event_type": "action",
+                "event_order": 1,
+                "properties": {
+                    "id": 1,
+                    "name": "Send cart reminder",
+                    "description": "",
+                    "type": "email.send",
+                    "eventType": "action",
+                    "order": 1,
+                    "properties": {
+                        "email": 1,
+                        "email_type": "marketing",
+                        "priority": "2",
+                        "attempts": "3"
+                    },
+                    "triggerDate": null,
+                    "triggerInterval": "1",
+                    "triggerIntervalUnit": "d",
+                    "triggerHour": "",
+                    "triggerRestrictedStartHour": "",
+                    "triggerRestrictedStopHour": "",
+                    "triggerRestrictedDaysOfWeek": [],
+                    "triggerWindow": "0",
+                    "triggerMode": "immediate",
+                    "decisionPath": null,
+                    "channel": "email",
+                    "channelId": 1,
+                    "uuid": "11111111-aaaa-4bbb-8ccc-000000000001",
+                    "anchor": "leadsource",
+                    "anchorEventType": "source",
+                    "canvasSettings": {
+                        "droppedX": "300",
+                        "droppedY": "180"
+                    },
+                    "email": 1,
+                    "email_type": "marketing",
+                    "priority": "2",
+                    "attempts": "3"
+                },
+                "trigger_interval": 0,
+                "trigger_interval_unit": null,
+                "trigger_mode": "immediate",
+                "trigger_date": null,
+                "trigger_hour": null,
+                "triggerRestrictedStartHour": null,
+                "triggerRestrictedStopHour": null,
+                "triggerRestrictedDaysOfWeek": [],
+                "triggerWindow": null,
+                "decisionPath": "",
+                "channel": "email",
+                "channel_id": 1,
+                "parent_id": null,
+                "uuid": "11111111-aaaa-4bbb-8ccc-000000000001"
+            },
+            {
+                "id": 2,
+                "campaign_id": 1,
+                "name": "Opens the reminder",
+                "description": "",
+                "type": "email.open",
+                "event_type": "decision",
+                "event_order": 2,
+                "properties": {
+                    "id": 2,
+                    "name": "Opens the reminder",
+                    "description": "",
+                    "type": "email.open",
+                    "eventType": "decision",
+                    "order": 2,
+                    "properties": {
+                        "email": 1
+                    },
+                    "triggerDate": null,
+                    "triggerInterval": "1",
+                    "triggerIntervalUnit": "d",
+                    "triggerHour": "",
+                    "triggerRestrictedStartHour": "",
+                    "triggerRestrictedStopHour": "",
+                    "triggerRestrictedDaysOfWeek": [],
+                    "triggerWindow": "0",
+                    "triggerMode": "",
+                    "decisionPath": null,
+                    "channel": "email",
+                    "channelId": 1,
+                    "uuid": "22222222-aaaa-4bbb-8ccc-000000000002",
+                    "anchor": "bottom",
+                    "anchorEventType": "action",
+                    "canvasSettings": {
+                        "droppedX": "300",
+                        "droppedY": "320"
+                    },
+                    "email": 1
+                },
+                "trigger_interval": 0,
+                "trigger_interval_unit": null,
+                "trigger_mode": "",
+                "trigger_date": null,
+                "trigger_hour": null,
+                "triggerRestrictedStartHour": null,
+                "triggerRestrictedStopHour": null,
+                "triggerRestrictedDaysOfWeek": [],
+                "triggerWindow": null,
+                "decisionPath": "",
+                "channel": "email",
+                "channel_id": 1,
+                "parent_id": 1,
+                "uuid": "22222222-aaaa-4bbb-8ccc-000000000002"
+            },
+            {
+                "id": 3,
+                "campaign_id": 1,
+                "name": "Clicks a product link",
+                "description": "",
+                "type": "email.click",
+                "event_type": "decision",
+                "event_order": 3,
+                "properties": {
+                    "id": 3,
+                    "name": "Clicks a product link",
+                    "description": "",
+                    "type": "email.click",
+                    "eventType": "decision",
+                    "order": 3,
+                    "properties": {
+                        "email": 1,
+                        "links": []
+                    },
+                    "triggerDate": null,
+                    "triggerInterval": "1",
+                    "triggerIntervalUnit": "d",
+                    "triggerHour": "",
+                    "triggerRestrictedStartHour": "",
+                    "triggerRestrictedStopHour": "",
+                    "triggerRestrictedDaysOfWeek": [],
+                    "triggerWindow": "0",
+                    "triggerMode": "",
+                    "decisionPath": "yes",
+                    "channel": "email",
+                    "channelId": 1,
+                    "uuid": "33333333-aaaa-4bbb-8ccc-000000000003",
+                    "anchor": "yes",
+                    "anchorEventType": "decision",
+                    "canvasSettings": {
+                        "droppedX": "150",
+                        "droppedY": "460"
+                    },
+                    "email": 1,
+                    "links": []
+                },
+                "trigger_interval": 0,
+                "trigger_interval_unit": null,
+                "trigger_mode": "",
+                "trigger_date": null,
+                "trigger_hour": null,
+                "triggerRestrictedStartHour": null,
+                "triggerRestrictedStopHour": null,
+                "triggerRestrictedDaysOfWeek": [],
+                "triggerWindow": null,
+                "decisionPath": "yes",
+                "channel": "email",
+                "channel_id": 1,
+                "parent_id": 2,
+                "uuid": "33333333-aaaa-4bbb-8ccc-000000000003"
+            },
+            {
+                "id": 4,
+                "campaign_id": 1,
+                "name": "Add 15 purchase-intent points",
+                "description": "",
+                "type": "lead.changepoints",
+                "event_type": "action",
+                "event_order": 4,
+                "properties": {
+                    "id": 4,
+                    "name": "Add 15 purchase-intent points",
+                    "description": "",
+                    "type": "lead.changepoints",
+                    "eventType": "action",
+                    "order": 4,
+                    "properties": {
+                        "points": "15",
+                        "group": ""
+                    },
+                    "triggerDate": null,
+                    "triggerInterval": "1",
+                    "triggerIntervalUnit": "d",
+                    "triggerHour": "",
+                    "triggerRestrictedStartHour": "",
+                    "triggerRestrictedStopHour": "",
+                    "triggerRestrictedDaysOfWeek": [],
+                    "triggerWindow": "0",
+                    "triggerMode": "immediate",
+                    "decisionPath": "yes",
+                    "channel": "",
+                    "channelId": 0,
+                    "uuid": "44444444-aaaa-4bbb-8ccc-000000000004",
+                    "anchor": "yes",
+                    "anchorEventType": "decision",
+                    "canvasSettings": {
+                        "droppedX": "150",
+                        "droppedY": "600"
+                    },
+                    "points": "15",
+                    "group": ""
+                },
+                "trigger_interval": 0,
+                "trigger_interval_unit": null,
+                "trigger_mode": "immediate",
+                "trigger_date": null,
+                "trigger_hour": null,
+                "triggerRestrictedStartHour": null,
+                "triggerRestrictedStopHour": null,
+                "triggerRestrictedDaysOfWeek": [],
+                "triggerWindow": null,
+                "decisionPath": "yes",
+                "channel": "",
+                "channel_id": 0,
+                "parent_id": 3,
+                "uuid": "44444444-aaaa-4bbb-8ccc-000000000004"
+            },
+            {
+                "id": 5,
+                "campaign_id": 1,
+                "name": "Tag as hot-cart",
+                "description": "",
+                "type": "lead.changetags",
+                "event_type": "action",
+                "event_order": 5,
+                "properties": {
+                    "id": 5,
+                    "name": "Tag as hot-cart",
+                    "description": "",
+                    "type": "lead.changetags",
+                    "eventType": "action",
+                    "order": 5,
+                    "properties": {
+                        "add_tags": [
+                            "hot-cart"
+                        ],
+                        "remove_tags": []
+                    },
+                    "triggerDate": null,
+                    "triggerInterval": "1",
+                    "triggerIntervalUnit": "d",
+                    "triggerHour": "",
+                    "triggerRestrictedStartHour": "",
+                    "triggerRestrictedStopHour": "",
+                    "triggerRestrictedDaysOfWeek": [],
+                    "triggerWindow": "0",
+                    "triggerMode": "immediate",
+                    "decisionPath": null,
+                    "channel": "",
+                    "channelId": 0,
+                    "uuid": "55555555-aaaa-4bbb-8ccc-000000000005",
+                    "anchor": "bottom",
+                    "anchorEventType": "action",
+                    "canvasSettings": {
+                        "droppedX": "150",
+                        "droppedY": "740"
+                    },
+                    "add_tags": [
+                        "hot-cart"
+                    ],
+                    "remove_tags": []
+                },
+                "trigger_interval": 0,
+                "trigger_interval_unit": null,
+                "trigger_mode": "immediate",
+                "trigger_date": null,
+                "trigger_hour": null,
+                "triggerRestrictedStartHour": null,
+                "triggerRestrictedStopHour": null,
+                "triggerRestrictedDaysOfWeek": [],
+                "triggerWindow": null,
+                "decisionPath": "",
+                "channel": "",
+                "channel_id": 0,
+                "parent_id": 4,
+                "uuid": "55555555-aaaa-4bbb-8ccc-000000000005"
+            },
+            {
+                "id": 6,
+                "campaign_id": 1,
+                "name": "Send discount reminder after 1 day",
+                "description": "",
+                "type": "email.send",
+                "event_type": "action",
+                "event_order": 3,
+                "properties": {
+                    "id": 6,
+                    "name": "Send discount reminder after 1 day",
+                    "description": "",
+                    "type": "email.send",
+                    "eventType": "action",
+                    "order": 3,
+                    "properties": {
+                        "email": 2,
+                        "email_type": "marketing",
+                        "priority": "2",
+                        "attempts": "3"
+                    },
+                    "triggerDate": null,
+                    "triggerInterval": "1",
+                    "triggerIntervalUnit": "d",
+                    "triggerHour": "",
+                    "triggerRestrictedStartHour": "",
+                    "triggerRestrictedStopHour": "",
+                    "triggerRestrictedDaysOfWeek": [],
+                    "triggerWindow": "0",
+                    "triggerMode": "interval",
+                    "decisionPath": "no",
+                    "channel": "email",
+                    "channelId": 2,
+                    "uuid": "66666666-aaaa-4bbb-8ccc-000000000006",
+                    "anchor": "no",
+                    "anchorEventType": "decision",
+                    "canvasSettings": {
+                        "droppedX": "470",
+                        "droppedY": "460"
+                    },
+                    "email": 2,
+                    "email_type": "marketing",
+                    "priority": "2",
+                    "attempts": "3"
+                },
+                "trigger_interval": 1,
+                "trigger_interval_unit": "d",
+                "trigger_mode": "interval",
+                "trigger_date": null,
+                "trigger_hour": null,
+                "triggerRestrictedStartHour": null,
+                "triggerRestrictedStopHour": null,
+                "triggerRestrictedDaysOfWeek": [],
+                "triggerWindow": null,
+                "decisionPath": "no",
+                "channel": "email",
+                "channel_id": 2,
+                "parent_id": 2,
+                "uuid": "66666666-aaaa-4bbb-8ccc-000000000006"
+            }
+        ],
+        "email": [
+            {
+                "id": 1,
+                "translation_parent_id": null,
+                "variant_parent_id": null,
+                "unsubscribeform_id": null,
+                "preference_center_id": null,
+                "is_published": true,
+                "name": "Cart Reminder",
+                "description": null,
+                "subject": "You left something in your cart",
+                "preheader_text": "Your cart is still waiting for you",
+                "from_name": null,
+                "use_owner_as_mailer": false,
+                "template": "blank",
+                "content": [],
+                "utm_tags": {
+                    "utmSource": "mautic",
+                    "utmMedium": "email",
+                    "utmCampaign": "abandoned-cart",
+                    "utmContent": null
+                },
+                "plain_text": "You left items in your cart. Return any time to complete your order.",
+                "custom_html": "<!doctype html>\n<html lang=\"en\" dir=\"auto\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">\n<head><title></title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style type=\"text/css\">#outlook a{padding:0;}body{margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}table,td{border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;}img{border:0;height:auto;line-height:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;}p{display:block;margin:13px 0;}</style><!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]--><link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700\" rel=\"stylesheet\" type=\"text/css\"><link href=\"https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700\" rel=\"stylesheet\" type=\"text/css\"><style type=\"text/css\">@media only screen and (min-width:480px){.mj-column-px-550{width:550px!important;max-width:550px;}}</style></head>\n<body style=\"word-spacing:normal;\"><div style=\"background:#f2f4f6;\" lang=\"en\" dir=\"auto\"><div style=\"background:#ffffff;background-color:#ffffff;margin:0px auto;max-width:600px;\"><table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"background:#ffffff;background-color:#ffffff;width:100%;\"><tbody><tr><td style=\"direction:ltr;font-size:0px;padding:20px 0;text-align:center;\"><div class=\"mj-column-px-550 mj-outlook-group-fix\" style=\"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"vertical-align:top;\" width=\"100%\"><tbody><tr><td style=\"font-size:0px;word-break:break-word;\"><div style=\"height:20px;line-height:20px;\">&#8202;</div></td></tr><tr><td align=\"left\" style=\"font-size:0px;padding:10px 25px;word-break:break-word;\"><div style=\"font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:26px;font-weight:700;line-height:1.2;text-align:left;color:#222222;\"><p style=\"margin:0;\">You left something behind, {contactfield=firstname}</p></div></td></tr><tr><td align=\"left\" style=\"font-size:0px;padding:10px 25px;word-break:break-word;\"><div style=\"font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:15px;line-height:1.6;text-align:left;color:#555555;\"><p style=\"margin:0;\">Your cart is still waiting. The items you picked are popular and may sell out soon.</p></div></td></tr><tr><td align=\"left\" style=\"font-size:0px;padding:10px 25px;word-break:break-word;\"><div style=\"font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:15px;line-height:1.6;text-align:left;color:#555555;\"><p style=\"margin:0;\">Pick up right where you left off &mdash; it only takes a click.</p></div></td></tr><tr><td align=\"left\" style=\"font-size:0px;padding:15px 25px;word-break:break-word;\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"border-collapse:separate;line-height:100%;\"><tr><td align=\"center\" bgcolor=\"#d6336c\" role=\"presentation\" style=\"border-radius:4px;cursor:auto;background:#d6336c;\" valign=\"middle\"><a href=\"https://example.com/cart\" target=\"_blank\" style=\"display:inline-block;background:#d6336c;color:#ffffff;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:15px;font-weight:700;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:14px 30px;border-radius:4px;\">Return to my cart</a></td></tr></table></td></tr><tr><td style=\"font-size:0px;word-break:break-word;\"><div style=\"height:20px;line-height:20px;\">&#8202;</div></td></tr><tr><td align=\"left\" style=\"font-size:0px;padding:10px 25px;word-break:break-word;\"><div style=\"font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:11px;line-height:1.4;text-align:left;color:#9b9b9b;\"><p style=\"margin:0;\">{unsubscribe_text} | {webview_text}</p></div></td></tr><tr><td style=\"font-size:0px;word-break:break-word;\"><div style=\"height:20px;line-height:20px;\">&#8202;</div></td></tr></tbody></table></div></td></tr></tbody></table></div></div></body></html>",
+                "email_type": "marketing",
+                "publish_up": null,
+                "publish_down": null,
+                "revision": 1,
+                "lang": "en",
+                "variant_settings": [],
+                "variant_start_date": null,
+                "dynamic_content": [
+                    {
+                        "tokenName": "Dynamic Content 1",
+                        "content": "Default Dynamic Content",
+                        "filters": [
+                            {
+                                "content": null,
+                                "filters": []
+                            }
+                        ]
+                    }
+                ],
+                "headers": [],
+                "public_preview": false,
+                "uuid": "f3c9a1de-77b0-4b2e-9c8a-0d1e2f3a4b5c"
+            },
+            {
+                "id": 2,
+                "translation_parent_id": null,
+                "variant_parent_id": null,
+                "unsubscribeform_id": null,
+                "preference_center_id": null,
+                "is_published": true,
+                "name": "Cart Discount Reminder",
+                "description": null,
+                "subject": "A little 10% nudge to finish your order",
+                "preheader_text": "Use code COMEBACK10 for 10% off",
+                "from_name": null,
+                "use_owner_as_mailer": false,
+                "template": "blank",
+                "content": [],
+                "utm_tags": {
+                    "utmSource": "mautic",
+                    "utmMedium": "email",
+                    "utmCampaign": "abandoned-cart",
+                    "utmContent": null
+                },
+                "plain_text": "Use code COMEBACK10 for 10% off and complete your order within 48 hours.",
+                "custom_html": "<!doctype html>\n<html lang=\"en\" dir=\"auto\" xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\">\n<head><title></title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><style type=\"text/css\">#outlook a{padding:0;}body{margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}table,td{border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;}img{border:0;height:auto;line-height:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;}p{display:block;margin:13px 0;}</style><!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript><![endif]--><link href=\"https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700\" rel=\"stylesheet\" type=\"text/css\"><link href=\"https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700\" rel=\"stylesheet\" type=\"text/css\"><style type=\"text/css\">@media only screen and (min-width:480px){.mj-column-px-550{width:550px!important;max-width:550px;}}</style></head>\n<body style=\"word-spacing:normal;\"><div style=\"background:#f2f4f6;\" lang=\"en\" dir=\"auto\"><div style=\"background:#ffffff;background-color:#ffffff;margin:0px auto;max-width:600px;\"><table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"background:#ffffff;background-color:#ffffff;width:100%;\"><tbody><tr><td style=\"direction:ltr;font-size:0px;padding:20px 0;text-align:center;\"><div class=\"mj-column-px-550 mj-outlook-group-fix\" style=\"font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"vertical-align:top;\" width=\"100%\"><tbody><tr><td style=\"font-size:0px;word-break:break-word;\"><div style=\"height:20px;line-height:20px;\">&#8202;</div></td></tr><tr><td align=\"left\" style=\"font-size:0px;padding:10px 25px;word-break:break-word;\"><div style=\"font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:26px;font-weight:700;line-height:1.2;text-align:left;color:#222222;\"><p style=\"margin:0;\">Here's 10% off to complete your order</p></div></td></tr><tr><td align=\"left\" style=\"font-size:0px;padding:10px 25px;word-break:break-word;\"><div style=\"font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:15px;line-height:1.6;text-align:left;color:#555555;\"><p style=\"margin:0;\">Still thinking it over? Here's a little nudge: use code <strong>COMEBACK10</strong> for 10% off your cart.</p></div></td></tr><tr><td align=\"left\" style=\"font-size:0px;padding:10px 25px;word-break:break-word;\"><div style=\"font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:15px;line-height:1.6;text-align:left;color:#555555;\"><p style=\"margin:0;\">Offer expires in 48 hours, so don't wait too long.</p></div></td></tr><tr><td align=\"left\" style=\"font-size:0px;padding:15px 25px;word-break:break-word;\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"border-collapse:separate;line-height:100%;\"><tr><td align=\"center\" bgcolor=\"#c2410c\" role=\"presentation\" style=\"border-radius:4px;cursor:auto;background:#c2410c;\" valign=\"middle\"><a href=\"https://example.com/cart?code=COMEBACK10\" target=\"_blank\" style=\"display:inline-block;background:#c2410c;color:#ffffff;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:15px;font-weight:700;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:14px 30px;border-radius:4px;\">Claim my discount</a></td></tr></table></td></tr><tr><td style=\"font-size:0px;word-break:break-word;\"><div style=\"height:20px;line-height:20px;\">&#8202;</div></td></tr><tr><td align=\"left\" style=\"font-size:0px;padding:10px 25px;word-break:break-word;\"><div style=\"font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:11px;line-height:1.4;text-align:left;color:#9b9b9b;\"><p style=\"margin:0;\">{unsubscribe_text} | {webview_text}</p></div></td></tr><tr><td style=\"font-size:0px;word-break:break-word;\"><div style=\"height:20px;line-height:20px;\">&#8202;</div></td></tr></tbody></table></div></td></tr></tbody></table></div></div></body></html>",
+                "email_type": "marketing",
+                "publish_up": null,
+                "publish_down": null,
+                "revision": 1,
+                "lang": "en",
+                "variant_settings": [],
+                "variant_start_date": null,
+                "dynamic_content": [
+                    {
+                        "tokenName": "Dynamic Content 1",
+                        "content": "Default Dynamic Content",
+                        "filters": [
+                            {
+                                "content": null,
+                                "filters": []
+                            }
+                        ]
+                    }
+                ],
+                "headers": [],
+                "public_preview": false,
+                "uuid": "a2b3c4d5-6e7f-4081-9a2b-3c4d5e6f7081"
+            }
+        ],
+        "page": [],
+        "asset": [],
+        "lists": [
+            {
+                "id": 1,
+                "name": "Cart Abandoners",
+                "is_published": true,
+                "description": "Contacts active in the last 7 days who have not completed checkout",
+                "alias": "cart-abandoners",
+                "public_name": "Cart Abandoners",
+                "filters": [
+                    {
+                        "glue": "and",
+                        "object": "lead",
+                        "field": "last_active",
+                        "type": "datetime",
+                        "operator": "gte",
+                        "filter": "-7 days",
+                        "display": null
+                    }
+                ],
+                "is_global": true,
+                "is_preference_center": false,
+                "uuid": "7a7a7a7a-bbbb-4ccc-8ddd-000000000001"
+            }
+        ],
+        "forms": [],
+        "form_field": [],
+        "lead_field": [],
+        "form_action": [],
+        "dependencies": [
+            {
+                "campaign_event": [
+                    {
+                        "campaign": 1,
+                        "campaign_event": 1,
+                        "email": 1
+                    },
+                    {
+                        "campaign": 1,
+                        "campaign_event": 2,
+                        "email": 1
+                    },
+                    {
+                        "campaign": 1,
+                        "campaign_event": 3,
+                        "email": 1
+                    },
+                    {
+                        "campaign": 1,
+                        "campaign_event": 4
+                    },
+                    {
+                        "campaign": 1,
+                        "campaign_event": 5
+                    },
+                    {
+                        "campaign": 1,
+                        "campaign_event": 6,
+                        "email": 2
+                    }
+                ],
+                "lists": [
+                    {
+                        "campaign": 1,
+                        "lists": 1
+                    }
+                ],
+                "forms": [],
+                "form_action": []
+            }
+        ]
+    }
+]
