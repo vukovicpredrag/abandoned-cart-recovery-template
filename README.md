@@ -6,7 +6,7 @@ Wins back shoppers who left items in their cart: reminder email, then open- and 
 
 ## Contents
 - 1 campaign (6 events: `email.send`, `email.open`, `email.click`, `lead.changepoints`, `lead.changetags`, `email.send`)
-- 2 emails, 1 segment
+- 2 emails, 1 segment, 1 PDF asset (Returns & Sizing Guide, linked from the reminder email)
 - Mechanics shown: open + click decisions, point scoring and tag assignment on the engaged branch
 
 ## Structure
